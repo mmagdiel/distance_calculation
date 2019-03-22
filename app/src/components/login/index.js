@@ -1,9 +1,35 @@
-import React from 'react'
-import { Link } from "react-router-dom"
+import React, { Component } from 'react'
+import { MyInput } from '../fields'
+import { Field, reduxForm } from 'redux-form'
 
-export default () => {
-    return (<>
-        <h1>Hola</h1>
-        <Link to="/search">search</Link>
-    </>)
+class LoginForm extends Component {
+    render () {
+        const { handleSubmit } = this.props
+        return (<>
+                <h1>Login</h1>
+                <form onSubmit={handleSubmit}>
+                    <Field 
+                        name="username"
+                        component={MyInput}
+                        type="text"
+                        label="Username"
+                    />
+                    <Field 
+                        name="password"
+                        component={MyInput}
+                        type="text"
+                        label="Password"
+                    />
+                    <button type="submit">Submit</button>
+                </form>
+            </>
+        )
+    }
 }
+
+
+LoginForm = reduxForm({
+    form: 'register'
+})(LoginForm)
+  
+export default LoginForm

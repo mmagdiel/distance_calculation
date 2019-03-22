@@ -1,14 +1,14 @@
+import App from './app'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Login from './pages/login'
-import Search from './components/search'
-import { Route, BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { createStore, combineReducers } from 'redux'
 import { reducer as formReducer } from 'redux-form'
 
 const reducers = {
-    form: formReducer
+    form: formReducer,
+    search: formReducer
 }
 
 const reducer = combineReducers(reducers)
@@ -23,10 +23,7 @@ ReactDOM.render(
     (
         <Provider store={store}>
             <BrowserRouter>
-                <div>
-                    <Route path="/" component={Login}/>
-                    <Route path="/search" component={Search}/>
-                </div>
+                <App />
             </BrowserRouter>
         </Provider>
     ), document.getElementById('root')

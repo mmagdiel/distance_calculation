@@ -29,7 +29,7 @@ class LoginForm extends Component {
 
 
 LoginForm = reduxForm({
-    form: 'register'
+    form: 'login',
 })(LoginForm)
   
 export default LoginForm

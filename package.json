@@ -19,6 +19,9 @@
   "homepage": "https://github.com/mmagdiel/distance_calculation#readme",
   "dependencies": {
     "diet": "^0.16.0",
-    "lodash": "^4.17.11"
+    "diet-cross-origin": "^0.2.3",
+    "google-distance-matrix": "^1.1.1",
+    "lodash": "^4.17.11",
+    "node-geocoder": "^3.22.0"
   }
 }
